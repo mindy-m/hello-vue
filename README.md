@@ -2,4 +2,4 @@
 
 Link back to repo: https://github.com/mindy-m/hello-vue
 
-Practicing Vue
+Practicing Vue, with goats.
