@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="UTF-8">
+    	<meta 
+    		name="viewport",
+    		content="width=device-width, initial-scale=1.0"
+    	>
+    	<title>
+    		Vue Thingymabob
+    	</title>
+	</head>
+
+	<body>
+		<div id="root">
+    		<h1>Welcome to Vue, where the goats totally roam free.</h1>
+    		<div>
+    			<h2>Colors and stuff:</h2>
+    			<color-box color="red"></color-box>
+    			<color-box color="orange"></color-box>
+    			<color-box color="yellow"></color-box>
+    			<color-box color="green"></color-box>
+    			<color-box color="blue"></color-box>
+    			<color-box color="purple"></color-box>
+    			<color-box color="pink"></color-box>
+
+    		</div>
+    		<p>
+    			The clock is currently {{clock}}.
+    		</p>
+    		<br>
+    		<p>
+    			What are the goats hungry for today?
+    		</p>
+    		<div>
+    			<input 
+    				type="text"
+    				v-model="foodName"
+    			>
+    		</div>
+
+    		<br>
+    		<p>
+    			How many {{foodName}} would you like to feed to the goats?
+    		</p>
+
+    		<div>
+    			<input 
+    				type="number"
+    				v-model="foodCount"
+    			>
+    		</div>
+
+    		<br>
+    		<p>
+    			We have {{goatCount}} goats up in here who are hungry for {{foodName}}!
+    		</p>
+    		<p>
+    			The goats are {{mood}}, because we have {{foodCount}} {{foodName}}.
+    		</p>
+    		<br>
+
+    		<p>
+    			We happen to have some VIP goats:
+    			<ul>
+    				<!-- for loop using v-for -->
+    				<li
+    					v-for="goat in goatList"
+    						>{{goat}}
+    				</li>
+    			</ul>    			
+    		</p>
+
+    		<div>
+    			<input 
+    				type="text"
+    				v-model="newGoatName"
+    			>
+    			<button @click="goatList.push(newGoatName)">
+    				Add goat to VIP list.	
+    			</button>
+    		</div>
+
+    		<br>    		
+    		<p>
+    			Do more stuff:
+    		</p>
+
+    		<div>
+    			<button @click="addGoats(2)">
+    				ADD 2 GOATS NOW
+    			</button>
+
+    			<p>
+    				OR
+    			</p>
+
+    			<button @click="addGoats(5)">
+    				ADD 5 GOATS NOW
+    			</button>
+    			<br>
+    			<br>
+    			<br>
+
+    			<p>
+    				Or if you are <em><strong>evil</strong></em>...
+    			</p>
+    			<button @click="addGoats(-1)">
+    				CONSUME A GOAT (Why??)
+    			</button>
+    		</div>
+    	</div>
+    	<div id="notVue">
+    		<button id="notVueButton">
+    			This button isn't Vue.	
+    		</button>
+    	</div>
+    	<script
+    		type="text/x-template"
+    		id="template-color-box">
+    		<div
+    			class="color-box"
+    			:style="{backgroundColor: color}"
+    		>
+    			{{color}}
+    		</div>
+    	</script>
+    	<script 
+    		src="https://unpkg.com/vue@3/dist/vue.global.js">
+    	</script>
+    	<script 
+    		src="./index.js">
+    	</script>
+    </body>
+</html>
