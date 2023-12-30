@@ -65,7 +65,7 @@
     			<ul>
     				<!-- for loop using v-for -->
     				<li
-    					v-for="goat in goatList"
+    					v-for="goat in vipList"
     						>{{goat}}
     				</li>
     			</ul>    			
@@ -74,11 +74,50 @@
     		<div>
     			<input 
     				type="text"
-    				v-model="newGoatName"
+    				v-model="vipName"
     			>
-    			<button @click="goatList.push(newGoatName)">
+    			<button @click="vipList.push(vipName)">
     				Add goat to VIP list.	
     			</button>
+    		</div>
+
+    		<div>
+    			<h1>Goat Object Form</h1>
+				<div>
+					<label>
+						<span>Name</span>
+						<input 
+							type="text"
+							v-model="goatObject.name"
+						>
+					</label>	
+				</div>
+				<div>
+					<label>
+						<span>Power Level: </span>
+						<input 
+							type="range"
+							v-model.number="goatObject.powerLevel"
+							min="1"
+							max="65535"
+						>
+					</label>	
+				</div>
+				<div>
+					<label>
+						<span>Is Grumpy?</span>
+						<input 
+							type="checkbox"
+							v-model="goatObject.isGrumpy"
+						>
+					</label>	
+				</div>
+				<!-- ... is the JavaScript spread operator -->
+    			<button @click="goatList.push({...goatObject})">
+    				Add goat to goat list.	
+    			</button>
+				<pre>Current goat: {{goatObject}}</pre>
+				<pre>Current goat list: {{goatList}}</pre>
     		</div>
 
     		<br>    		

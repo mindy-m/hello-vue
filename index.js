@@ -43,13 +43,20 @@ const appConfig = {
 
 		const mood = Vue.computed(howToComputeTheMood)
 
-		const goatList = Vue.ref([
+		const vipList = Vue.ref([
 			'Gruf',
 			'Fawn',
 			'Billy',
 		]);
 
-		const newGoatName = Vue.ref("");
+		const vipName = Vue.ref("");
+		const goatObject = Vue.ref( {
+			name: "",
+			powerLevel: 0,
+			isGrumpy: true,
+		});
+
+		const goatList = Vue.ref([]);
 
 		console.log('What is goatCount?', goatCount);
 		const addGoats = (change) => {
@@ -61,9 +68,11 @@ const appConfig = {
 			foodName,
 			foodCount,
 			mood,
-			goatList,
-			newGoatName,
+			vipList,
+			vipName,
 			clock,
+			goatObject,
+			goatList,
 		}
 	}
 }
