@@ -76,7 +76,7 @@
     				type="text"
     				v-model="vipName"
     			>
-    			<button @click="vipList.push(vipName)">
+    			<button @click="addVIP">
     				Add goat to VIP list.	
     			</button>
     		</div>
@@ -112,8 +112,7 @@
 						>
 					</label>	
 				</div>
-				<!-- ... is the JavaScript spread operator -->
-    			<button @click="goatList.push({...goatObject})">
+				<button @click="addGoatObject">
     				Add goat to goat list.	
     			</button>
 				<pre>Current goat: {{goatObject}}</pre>

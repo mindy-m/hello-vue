@@ -50,14 +50,27 @@ const appConfig = {
 		]);
 
 		const vipName = Vue.ref("");
+		const addVIP = () => {
+			vipList.value.push(vipName.value);
+			vipName.value='';
+		}
+
 		const goatObject = Vue.ref( {
 			name: "",
 			powerLevel: 0,
-			isGrumpy: true,
+			isGrumpy: false,
 		});
 
 		const goatList = Vue.ref([]);
-
+		const addGoatObject = () => {
+			// ... is the JavaScript spread operator, but we're not using it.
+			goatList.value.push(goatObject.value);
+			goatObject.value = {
+				name: "",
+				powerLevel: 0,
+				isGrumpy: false,
+			};
+		}
 		console.log('What is goatCount?', goatCount);
 		const addGoats = (change) => {
 			goatCount.value += change;
@@ -70,9 +83,11 @@ const appConfig = {
 			mood,
 			vipList,
 			vipName,
+			addVIP,
 			clock,
 			goatObject,
 			goatList,
+			addGoatObject,
 		}
 	}
 }
