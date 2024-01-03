@@ -20,7 +20,7 @@ notVueButtonElement.addEventListener(
 
 
 const appConfig = {
-	// "syntax sugar shorthand" for setup: funcion() {
+	// "syntax sugar shorthand" for setup: function() {
 	setup() {
 		const foodName = Vue.ref("pretzels");
 		console.log('Moo.');
